@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-controller="app" id="chen">
+    <input id="wei" type="text" placeholder="search firstName" ng-model="searchText">
+    <input id="wei1" type="text" placeholder="search lastName" ng-model="searchText1" >	
+	<table>
+		<tr class="one">
+			<td ng-click="sort('FirstName')" ng-class="{'active':false}">FirstName<span></span></td>
+			<td ng-click="sort('LastName')" ng-class="{'active':false}">LastName<span></span></td>
+			<td ng-click="sort('Gender')" ng-class="{'active':false}">Gender<span></span></td>
+			<td ng-click="sort('Salary')" ng-class="{'active':false}">Salary<span></span></td>
+			<td ng-click="sort('Salary1')" ng-class="{'active':false}">Salary1<span></span></td>
+			<td ng-click="sort('Birthday')" ng-class="{'active':false}">Birthday<span></span></td>
+		</tr>
+		<tr ng-repeat="arr1 in arr1 |filter:searchText|filter:searchText1">
+			<td>{{arr1.FirstName}}</td>
+			<td>{{arr1.LastName}}</td>
+			<td>{{arr1.Gender}}</td>
+			<td>{{arr1.Salary}}</td>
+			<td>{{arr1.Salary1}}</td>
+			<td>{{arr1.Birthday}}</td>
+		</tr>
+	</table>
+	
+	
+</body>
+<script src="lib/angular.min.js"></script>
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+</html>
